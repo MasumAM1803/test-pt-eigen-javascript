@@ -1,40 +1,52 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import { Layout, theme } from 'antd';
+import Navbar from './components/pages/Navbar';
+import FooterComponet from './components/pages/FooterComponet';
+import Router from './routes/router';
+import LogoImg from '/mam-logo.png';
+
+const {
+  Content, Sider,
+} = Layout;
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is
-          {' '}
-          {count}
-        </button>
-        <p>
-          Edit
-          {' '}
-          <code>src/App.jsx</code>
-          {' '}
-          and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Layout>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {}}
+        onCollapse={(collapsed, type) => {}}
+      >
+        <div className="logo-vertical">
+          <img src={LogoImg} alt="logo" />
+        </div>
+        <Navbar />
+      </Sider>
+      <Layout>
+        <Content
+          style={{
+            margin: '24px 16px 0',
+          }}
+        >
+          <div
+            style={{
+              padding: 24,
+              minHeight: 360,
+              background: colorBgContainer,
+              borderRadius: borderRadiusLG,
+            }}
+          >
+            <Router />
+          </div>
+        </Content>
+        <FooterComponet />
+      </Layout>
+    </Layout>
   );
 }
 

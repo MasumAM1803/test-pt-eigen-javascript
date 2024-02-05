@@ -1,0 +1,57 @@
+body {
+  margin: 0px;
+}
+
+h2, h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.container-card {
+  margin-top: 12px;
+}
+
+.container-notfound {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.container-notfound > img {
+  max-width: 100%;
+}
+
+.logo-vertical {
+  text-align: center;
+}
+
+.logo-vertical > img {
+  width: 60px;
+  margin: 16px;
+  border-radius: 6px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav > a {
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  padding: 20px;
+  color: white;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: rgba(255,255,255,.2);
+}
